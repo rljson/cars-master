@@ -15,7 +15,7 @@ found in the LICENSE file in the root of this package.
 - This repo is the runtime of that domain: the code that runs on the
   server and may carry heavy dependencies
 - Before any master data exists, the repo has to prove that it can be
-  built, tested, published and used as a package
+  built, tested, released and used as a package
 - So its first release offers one function: `hello()`
 
 ## Strategy
@@ -23,8 +23,8 @@ found in the LICENSE file in the root of this package.
 - Set the repo up the way every rljson repo is set up: the rljson DNA
   for guides and skills, the TypeScript toolchain for build and tests
 - Keep the first feature tiny, so the setup is what gets tested
-- Publish it to npm as `@rljson/cars-master-runtime`, so other packages
-  can depend on a version instead of a local folder
+- Keep it private, off npm: other packages depend on a tagged version
+  of its git repository instead of a local folder
 
 ## Implementation: the setup
 

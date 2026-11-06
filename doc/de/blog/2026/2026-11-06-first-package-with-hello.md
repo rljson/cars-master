@@ -15,7 +15,7 @@ found in the LICENSE file in the root of this package.
 - Dieses Repo ist die Runtime dieser Domäne: der Code, der auf dem Server
   läuft und schwere Abhängigkeiten tragen darf
 - Bevor es Stammdaten gibt, muss das Repo zeigen, dass es sich bauen,
-  testen, veröffentlichen und als Paket nutzen lässt
+  testen, releasen und als Paket nutzen lässt
 - Sein erstes Release bietet deshalb eine Funktion: `hello()`
 
 ## Strategie
@@ -23,8 +23,8 @@ found in the LICENSE file in the root of this package.
 - Das Repo so aufsetzen wie jedes rljson-Repo: die rljson-DNA für
   Leitfäden und Skills, die TypeScript-Werkzeuge für Build und Tests
 - Das erste Feature winzig halten, damit der Aufbau geprüft wird
-- Es als `@rljson/cars-master-runtime` auf npm veröffentlichen, damit
-  andere Pakete von einer Version statt von einem lokalen Ordner abhängen
+- Es privat halten, nicht auf npm: andere Pakete hängen von einer
+  getaggten Version seines Git-Repos statt von einem lokalen Ordner ab
 
 ## Umsetzung: der Aufbau
 

@@ -11,7 +11,6 @@ found in the LICENSE file in the root of this package.
 [English](README.md) | Deutsch
 
 [![CI](https://github.com/rljson/cars-master-runtime/actions/workflows/quick_check.yaml/badge.svg)](https://github.com/rljson/cars-master-runtime/actions/workflows/quick_check.yaml)
-[![npm](https://img.shields.io/npm/v/@rljson/cars-master-runtime.svg)](https://www.npmjs.com/package/@rljson/cars-master-runtime)
 
 Stammdaten-Runtime der cars-Beispiel-App.
 
@@ -23,8 +22,11 @@ Stammdaten-Runtime der cars-Beispiel-App.
 
 ## Installation
 
+Das Paket ist privat und wird nicht auf npm veröffentlicht. Abhängig
+macht man sich von einer getaggten Version seines Git-Repos:
+
 ```bash
-pnpm add @rljson/cars-master-runtime
+pnpm add git+ssh://git@github.com/rljson/cars-master-runtime.git#semver:^0.0.1
 ```
 
 ## Verwendung
