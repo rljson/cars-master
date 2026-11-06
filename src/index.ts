@@ -4,4 +4,5 @@
 // Use of this source code is governed by terms that can be
 // found in the LICENSE file in the root of this package.
 
-export { hello } from './cars-master-runtime.ts';
+export { CarsMasterRuntime, hello } from './cars-master-runtime.ts';
+export { defaultPort, start } from './start.ts';

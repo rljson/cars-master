@@ -23,6 +23,7 @@ export default defineConfig({
     rollupOptions: {
       external: [
         'node:http',
+        'node:net',
         // Add all peer depencies from package.json here
       ],
       output: {

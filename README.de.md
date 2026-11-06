@@ -17,8 +17,9 @@ Stammdaten-Runtime der cars-Beispiel-App.
 ## Motivation
 
 - Die cars-App hält ihre Stammdaten in einer eigenen Domäne, getrennt von Anmeldung und Browser-API
-- Die Runtime trägt die schweren Abhängigkeiten dieser Domäne; sie läuft auf dem Server, eingebunden ins Backend for Frontend
-- Vorerst beweist sie das Einbinden mit einer Funktion, `hello()`
+- Die Runtime trägt die schweren Abhängigkeiten dieser Domäne; sie läuft als eigener Server, der Container `cars-master`
+- Andere Dienste erreichen sie nur über HTTP
+- Vorerst beantwortet sie das Hello World: `GET /api/hello` und `GET /health`
 
 ## Installation
 
@@ -41,6 +42,24 @@ Gibt aus:
 
 ```text
 Hello from cars-master-runtime
+```
+
+Den Server starten:
+
+```ts
+import { start } from '@rljson/cars-master-runtime';
+
+await start({ PORT: '3000' });
+```
+
+`GET /api/hello` antwortet dann `{"lines":["Hello from cars-master-runtime"]}`.
+
+## Container
+
+Den Container `cars-master` in der Registry bauen:
+
+```bash
+az acr build --registry crcarsdemo --image cars-master:<version>-<sha> .
 ```
 
 ## Grenzen

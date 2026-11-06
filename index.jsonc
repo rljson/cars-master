@@ -6,15 +6,15 @@
 
 {
   "name": "@rljson/cars-master-runtime",
-  "summary": "Master data runtime of the cars example app; so far it offers hello(), the greeting of the hello world.",
+  "summary": "Master data server of the cars example app; so far an HTTP server with GET /api/hello (its greeting) and GET /health; runs as the container cars-master.",
   "domain": [
     "master data of cars",
-    "runtime package linked into the backend for frontend",
+    "container cars-master, Node, uid 1000",
   ],
   "interfaces": {
     "uses": {},
     "usedBy": {
-      "cars-bff-runtime": "hello() as one line of /api/hello",
+      "cars-bff-runtime": "GET /api/hello over HTTP",
     },
   },
 }
