@@ -24,6 +24,7 @@
     "test": "pnpm exec vitest run --coverage && pnpm run lint",
     "prebuild": "npm run test",
     "prepublishOnly": "npm run build",
+    "prepare": "pnpm exec vite build",
     "lint": "pnpm exec eslint",
     "updateGoldens": "cross-env UPDATE_GOLDENS=true pnpm test"
   },
