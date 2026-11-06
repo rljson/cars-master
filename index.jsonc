@@ -1,0 +1,20 @@
+// @license
+// Copyright (c) rljson
+//
+// Use of this source code is governed by terms that can be
+// found in the LICENSE file in the root of this package.
+
+{
+  "name": "@rljson/cars-master-runtime",
+  "summary": "Master data server of the cars example app; so far an HTTP server with GET /api/hello (its greeting) and GET /health; runs as the container cars-master.",
+  "domain": [
+    "master data of cars",
+    "container cars-master, Node, uid 1000",
+  ],
+  "interfaces": {
+    "uses": {},
+    "usedBy": {
+      "cars-bff-runtime": "GET /api/hello over HTTP",
+    },
+  },
+}
