@@ -23,4 +23,4 @@ COPY --from=build /app/dist ./dist
 # The image node:22-alpine has the user node with uid 1000
 USER 1000
 EXPOSE 3000
-CMD ["node", "--input-type=module", "-e", "import('./dist/cars-master-runtime.js').then((m) => m.start())"]
+CMD ["node", "--input-type=module", "-e", "import('./dist/cars-master.js').then((m) => m.start())"]

@@ -6,7 +6,7 @@
 
 import { Server } from 'node:http';
 
-import { CarsMasterRuntime } from './cars-master-runtime.ts';
+import { CarsMaster } from './cars-master.ts';
 
 /** The port used when the environment sets none */
 export const defaultPort = 3000;
@@ -22,7 +22,7 @@ export async function start(
   log: (message: string) => void = console.log,
 ): Promise<Server> {
   const port = env['PORT'] ? Number(env['PORT']) : defaultPort;
-  const server = await new CarsMasterRuntime().listen(port);
-  log(`cars-master-runtime listens on port ${port}`);
+  const server = await new CarsMaster().listen(port);
+  log(`cars-master listens on port ${port}`);
   return server;
 }

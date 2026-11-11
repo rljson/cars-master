@@ -6,11 +6,11 @@ Use of this source code is governed by terms that can be
 found in the LICENSE file in the root of this package.
 -->
 
-# @rljson/cars-master-runtime
+# @rljson/cars-master
 
 [English](README.md) | Deutsch
 
-[![CI](https://github.com/rljson/cars-master-runtime/actions/workflows/quick_check.yaml/badge.svg)](https://github.com/rljson/cars-master-runtime/actions/workflows/quick_check.yaml)
+[![CI](https://github.com/rljson/cars-master/actions/workflows/quick_check.yaml/badge.svg)](https://github.com/rljson/cars-master/actions/workflows/quick_check.yaml)
 
 Stammdaten-Runtime der cars-Beispiel-App.
 
@@ -27,13 +27,13 @@ Das Paket ist privat und wird nicht auf npm veröffentlicht. Abhängig
 macht man sich von einer getaggten Version seines Git-Repos:
 
 ```bash
-pnpm add git+ssh://git@github.com/rljson/cars-master-runtime.git#semver:^0.0.1
+pnpm add git+ssh://git@github.com/rljson/cars-master.git#semver:^0.0.1
 ```
 
 ## Verwendung
 
 ```ts
-import { hello } from '@rljson/cars-master-runtime';
+import { hello } from '@rljson/cars-master';
 
 console.log(hello());
 ```
@@ -41,18 +41,18 @@ console.log(hello());
 Gibt aus:
 
 ```text
-Hello from cars-master-runtime
+Hello from cars-master
 ```
 
 Den Server starten:
 
 ```ts
-import { start } from '@rljson/cars-master-runtime';
+import { start } from '@rljson/cars-master';
 
 await start({ PORT: '3000' });
 ```
 
-`GET /api/hello` antwortet dann `{"lines":["Hello from cars-master-runtime"]}`.
+`GET /api/hello` antwortet dann `{"lines":["Hello from cars-master"]}`.
 
 ## Container
 

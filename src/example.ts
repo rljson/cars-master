@@ -4,7 +4,7 @@
 // Use of this source code is governed by terms that can be
 // found in the LICENSE file in the root of this package.
 
-import { hello } from './cars-master-runtime.ts';
+import { hello } from './cars-master.ts';
 
 export const example = () => {
   const l = console.log;

@@ -8,9 +8,9 @@ import { Server } from 'node:http';
 import { AddressInfo } from 'node:net';
 import { afterEach, describe, expect, it } from 'vitest';
 
-import { CarsMasterRuntime, hello } from '../src/cars-master-runtime';
+import { CarsMaster, hello } from '../src/cars-master';
 
-describe('CarsMasterRuntime', () => {
+describe('CarsMaster', () => {
   let server: Server | undefined;
 
   afterEach(() => {
@@ -18,27 +18,27 @@ describe('CarsMasterRuntime', () => {
     server = undefined;
   });
 
-  const call = async (bff: CarsMasterRuntime, method: string, path: string) => {
+  const call = async (bff: CarsMaster, method: string, path: string) => {
     server = await bff.listen(0);
     const { port } = server.address() as AddressInfo;
     return fetch(`http://localhost:${port}${path}`, { method });
   };
 
   describe('hello()', () => {
-    it('returns the greeting of cars-master-runtime', () => {
-      expect(hello()).toBe('Hello from cars-master-runtime');
+    it('returns the greeting of cars-master', () => {
+      expect(hello()).toBe('Hello from cars-master');
     });
   });
 
   describe('helloLines()', () => {
     it('holds its greeting', () => {
-      expect(CarsMasterRuntime.example.helloLines()).toEqual([hello()]);
+      expect(CarsMaster.example.helloLines()).toEqual([hello()]);
     });
   });
 
   describe('GET /api/hello', () => {
     it('answers the lines as json', async () => {
-      const res = await call(CarsMasterRuntime.example, 'GET', '/api/hello?x=1');
+      const res = await call(CarsMaster.example, 'GET', '/api/hello?x=1');
       expect(res.status).toBe(200);
       expect(res.headers.get('content-type')).toBe('application/json');
       expect(await res.json()).toEqual({
@@ -49,7 +49,7 @@ describe('CarsMasterRuntime', () => {
 
   describe('GET /health', () => {
     it('answers ok', async () => {
-      const res = await call(new CarsMasterRuntime(), 'GET', '/health');
+      const res = await call(new CarsMaster(), 'GET', '/health');
       expect(res.status).toBe(200);
       expect(await res.text()).toBe('ok');
     });
@@ -57,12 +57,12 @@ describe('CarsMasterRuntime', () => {
 
   describe('other requests', () => {
     it('answer 404 for an unknown path', async () => {
-      const res = await call(new CarsMasterRuntime(), 'GET', '/nope');
+      const res = await call(new CarsMaster(), 'GET', '/nope');
       expect(res.status).toBe(404);
     });
 
     it('answer 404 for another method', async () => {
-      const res = await call(new CarsMasterRuntime(), 'POST', '/api/hello');
+      const res = await call(new CarsMaster(), 'POST', '/api/hello');
       expect(res.status).toBe(404);
     });
   });
@@ -74,7 +74,7 @@ describe('CarsMasterRuntime', () => {
         writeHead: (s: number) => (status = s),
         end: () => undefined,
       };
-      new CarsMasterRuntime().handle(
+      new CarsMaster().handle(
         { method: 'GET' } as never,
         res as never,
       );

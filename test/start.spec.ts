@@ -24,9 +24,9 @@ describe('start()', () => {
     const { port } = server.address() as AddressInfo;
     const res = await fetch(`http://localhost:${port}/api/hello`);
     expect((await res.json()).lines).toEqual([
-      'Hello from cars-master-runtime',
+      'Hello from cars-master',
     ]);
-    expect(messages).toEqual(['cars-master-runtime listens on port 0']);
+    expect(messages).toEqual(['cars-master listens on port 0']);
   });
 
   it('uses the default port without PORT', async () => {
@@ -47,6 +47,6 @@ describe('start()', () => {
       if (before === undefined) delete process.env['PORT'];
       else process.env['PORT'] = before;
     }
-    expect(messages).toEqual(['cars-master-runtime listens on port 0']);
+    expect(messages).toEqual(['cars-master listens on port 0']);
   });
 });
