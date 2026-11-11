@@ -13,10 +13,10 @@ import {
 
 /**
  * Returns the greeting of this package.
- * @returns The line "Hello from cars-master-runtime"
+ * @returns The line "Hello from cars-master"
  */
 export function hello(): string {
-  return 'Hello from cars-master-runtime';
+  return 'Hello from cars-master';
 }
 
 // .............................................................................
@@ -26,10 +26,10 @@ export function hello(): string {
  * - `GET /api/hello` answers `{ lines: string[] }` with its greeting
  * - `GET /health` answers `ok`
  */
-export class CarsMasterRuntime {
+export class CarsMaster {
   /** Example instance for test purposes */
-  static get example(): CarsMasterRuntime {
-    return new CarsMasterRuntime();
+  static get example(): CarsMaster {
+    return new CarsMaster();
   }
 
   /** The lines `GET /api/hello` answers */
